@@ -38,8 +38,8 @@ class ListingViewLoaded extends ListingViewState {
 
     bool change = false;
     if (o is ListingViewLoaded) {
-      if (o.datastructurexList == datastructurexList) {
-        change = false;
+      if (o.datastructurexList != datastructurexList) {
+        change = true;
       }
       for (int i = 0; i < o.datastructurexList.length; i++) {
         if (o.datastructurexList[i].anzahl != datastructurexList[i].anzahl) {
