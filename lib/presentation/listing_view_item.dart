@@ -7,8 +7,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 class ListingViewItem extends StatelessWidget {
   final DataStructureX dataStructureX;
 
-  const ListingViewItem({Key? key, required this.dataStructureX})
-      : super(key: key);
+  const ListingViewItem({super.key, required this.dataStructureX});
 
   @override
   Widget build(BuildContext context) {

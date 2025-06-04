@@ -6,9 +6,11 @@ class ListingViewItemEdit extends StatefulWidget {
   final ListingViewCubit listingViewCubit;
   final DataStructureX dataStructureX;
 
-  const ListingViewItemEdit(
-      {Key? key, required this.dataStructureX, required this.listingViewCubit})
-      : super(key: key);
+  const ListingViewItemEdit({
+    super.key,
+    required this.dataStructureX,
+    required this.listingViewCubit,
+  });
 
   @override
   State<ListingViewItemEdit> createState() => _ListingViewItemEditState();
@@ -49,12 +51,12 @@ class _ListingViewItemEditState extends State<ListingViewItemEdit> {
                 widget.listingViewCubit.updateData();
                 Navigator.pop(context);
               },
-              child: const Text('OK'),
               style: ButtonStyle(
-                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                  shape: WidgetStateProperty.all<RoundedRectangleBorder>(
                       RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(18.0),
-                          side: const BorderSide(color: Colors.lightBlue))))),
+                          side: const BorderSide(color: Colors.lightBlue)))),
+              child: const Text('OK')),
         ],
       ),
     );

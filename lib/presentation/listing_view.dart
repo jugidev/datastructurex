@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class ListingView extends StatefulWidget {
-  const ListingView({Key? key}) : super(key: key);
+  const ListingView({super.key});
 
   @override
   State<ListingView> createState() => _ListingViewState();

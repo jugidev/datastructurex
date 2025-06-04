@@ -13,11 +13,11 @@ class ListingViewInitial extends ListingViewState {
   List<Object> get props => [datastructurexList];
 
   @override
-  bool operator ==(Object o) {
-    if (identical(this, o)) return true;
+  bool operator ==(Object other) {
+    if (identical(this, other)) return true;
 
-    return o is ListingViewInitial &&
-        o.datastructurexList == datastructurexList;
+    return other is ListingViewInitial &&
+        other.datastructurexList == datastructurexList;
   }
 
   @override
@@ -33,22 +33,23 @@ class ListingViewLoaded extends ListingViewState {
   List<Object> get props => [datastructurexList];
 
   @override
-  bool operator ==(Object o) {
-    if (identical(this, o)) return true;
+  bool operator ==(Object other) {
+    if (identical(this, other)) return true;
 
     bool change = false;
-    if (o is ListingViewLoaded) {
-      if (o.datastructurexList != datastructurexList) {
+    if (other is ListingViewLoaded) {
+      if (other.datastructurexList != datastructurexList) {
         change = true;
       }
-      for (int i = 0; i < o.datastructurexList.length; i++) {
-        if (o.datastructurexList[i].anzahl != datastructurexList[i].anzahl) {
+      for (int i = 0; i < other.datastructurexList.length; i++) {
+        if (other.datastructurexList[i].anzahl !=
+            datastructurexList[i].anzahl) {
           change = true;
           break;
         }
       }
     }
-    return o is ListingViewLoaded && change;
+    return other is ListingViewLoaded && change;
   }
 
   @override
@@ -64,10 +65,10 @@ class ListingViewError extends ListingViewState {
   List<Object> get props => [message];
 
   @override
-  bool operator ==(Object o) {
-    if (identical(this, o)) return true;
+  bool operator ==(Object other) {
+    if (identical(this, other)) return true;
 
-    return o is ListingViewError && o.message == message;
+    return other is ListingViewError && other.message == message;
   }
 
   @override

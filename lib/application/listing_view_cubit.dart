@@ -1,12 +1,11 @@
-import 'package:bloc/bloc.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:datastructurex/domain/datastructurex.dart';
 import 'package:equatable/equatable.dart';
-import 'package:flutter/foundation.dart';
 
 part 'listing_view_state.dart';
 
 class ListingViewCubit extends Cubit<ListingViewState> {
-  List<DataStructureX>? _datastructurexList;
+  List<DataStructureX> _datastructurexList = [];
 
   ListingViewCubit() : super(ListingViewInitial());
 
@@ -16,7 +15,7 @@ class ListingViewCubit extends Cubit<ListingViewState> {
           15,
           (index) =>
               DataStructureX(name: 'DataStructure$index', anzahl: index)));
-      emit(ListingViewLoaded(_datastructurexList!));
+      emit(ListingViewLoaded(_datastructurexList));
     } on Exception {
       emit(const ListingViewError('Die Liste konnte nicht geladen werden.'));
     }
@@ -24,7 +23,7 @@ class ListingViewCubit extends Cubit<ListingViewState> {
 
   Future<void> updateData() async {
     try {
-      emit(ListingViewLoaded(_datastructurexList!));
+      emit(ListingViewLoaded(_datastructurexList));
     } on Exception {
       emit(const ListingViewError('Die Liste konnte nicht geladen werden.'));
     }
